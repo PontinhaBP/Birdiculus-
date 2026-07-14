@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BirdID</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-align: center; padding: 20px; background: #f0f2f5; }
+        button { padding: 20px 40px; font-size: 18px; border-radius: 50px; border: none; background: #007AFF; color: white; width: 100%; max-width: 300px; }
+        #result { display: none; background: white; padding: 20px; border-radius: 20px; margin-top: 20px; }
+        img { max-width: 100%; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Bird Identifier</h1>
+    <button id="btn" onclick="startScan()">Identify Bird Song</button>
+    
+    <div id="result">
+        <h2>Identification Found:</h2>
+        <img id="birdImg" src="YOUR_IMAGE_URL_HERE" alt="Bird">
+        <h3 id="name">The Absolute Basket Case</h3>
+        <p><i>Latin: Avis absurdus-psychoticus</i></p>
+    </div>
+
+    <script>
+        function startScan() {
+            const btn = document.getElementById('btn');
+            btn.innerText = "Listening...";
+            btn.style.background = "#ff3b30";
+            
+            setTimeout(() => {
+                document.getElementById('btn').style.display = "none";
+                document.getElementById('result').style.display = "block";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
